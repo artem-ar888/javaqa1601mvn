@@ -42,16 +42,16 @@ class GameTest {
     }
 
     @Test
-    public void shouldNotBePlayedBecauseThePlayerIsNotRegistered() {
+    public void shouldNotBePlayedBecauseTheFirstPlayerIsNotRegistered() {
         Assertions.assertThrows(NotRegisteredException.class, () -> {
-            players.round(player1.getName(), player4.getName());
+            players.round(player4.getName(), player1.getName());
         });
     }
 
     @Test
-    public void shouldNotBePlayedBecausePlayersAreNotRegistered() {
+    public void shouldNotBePlayedBecauseTheSecondPlayerIsNotRegistered() {
         Assertions.assertThrows(NotRegisteredException.class, () -> {
-            players.round(player4.getName(), player5.getName());
+            players.round(player2.getName(), player5.getName());
         });
     }
 

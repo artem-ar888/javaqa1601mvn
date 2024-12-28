@@ -9,17 +9,13 @@ public class Game {
 
     private void checkRegistration(String playerName) {
         if (!registeredPlayers.containsKey(playerName)) {
-            throw new NotRegisteredException(
-                    "Player " + playerName + " is not registered"
-            );
+            throw new NotRegisteredException(playerName);
         }
     }
 
     private void checkForSameness(String playerName1, String playerName2) {
         if (registeredPlayers.get(playerName1).equals(registeredPlayers.get(playerName2))) {
-            throw new SamePlayersException(
-                    "Player " + playerName1 + " cannot play with himself"
-            );
+            throw new SamePlayersException(playerName1);
         }
     }
 

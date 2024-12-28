@@ -58,7 +58,7 @@ class GameTest {
     @Test
     public void shouldNotBePlayedBecauseItIsWithYourself() {
         Assertions.assertThrows(SamePlayersException.class, () -> {
-            players.round(player1.getName(), player1.getName());
+            players.round("Vitya", "Vitya");
         });
     }
 }
